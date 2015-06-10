@@ -17,9 +17,13 @@ def nth_prime(n):
             count += 1
     return i
 
-def max(list):
-    answer = 0
-    for x in list:
-        if x > answer:
-            answer = x
-    return answer
+def number_of_divisors(n):
+    count = 0
+    squroot = int(n ** 0.5)
+    for x in range(1, squroot + 1):
+        if n % x == 0:
+            count += 1
+    if squroot ** 2 == n:
+        return count * 2 - 1
+    else:
+        return count * 2
