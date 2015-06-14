@@ -19,11 +19,26 @@ def nth_prime(n):
 
 def number_of_divisors(n):
     count = 0
-    squroot = int(n ** 0.5)
-    for x in range(1, squroot + 1):
+    squrot = int(n ** 0.5)
+    for x in range(1, squrot + 1):
         if n % x == 0:
             count += 1
-    if squroot ** 2 == n:
+    if squrot ** 2 == n:
         return count * 2 - 1
     else:
         return count * 2
+
+def divisors(y):
+    output = [1]
+
+    largest = int(y ** 0.5)
+    if largest * largest == y:
+        output.append(largest)
+    else:
+        largest += 1
+
+    for x in range(2, largest):
+        if y % x == 0:
+            output.append(x)
+            output.append(int(y / x))
+    return output
