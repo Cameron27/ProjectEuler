@@ -42,3 +42,14 @@ def divisors(y):
             output.append(x)
             output.append(int(y / x))
     return output
+
+def index_of_fib_number_with_limit(limit):
+    a = 0
+    b = 1
+    count = 1
+    while True:
+        count += 1
+        a, b = b, a + b
+        if b > limit:
+            return count
+
