@@ -3,9 +3,12 @@ def is_prime(n):
         return False
     if n == 2:
         return True
-    for x in range(2, int(n ** 0.5) + 1):
-        if n % x == 0:
-            return False
+    try:
+        for x in range(2, int(n ** 0.5) + 1):
+            if n % x == 0:
+                return False
+    except TypeError:
+        return False
     return True
 
 def nth_prime(n):
